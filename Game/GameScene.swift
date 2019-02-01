@@ -17,7 +17,6 @@ class GameScene: SKScene {
         myLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
         myLabel.isAccessibilityElement = true
         myLabel.accessibilityLabel = "myLabel"
-        
         self.addChild(myLabel)
     }
     
