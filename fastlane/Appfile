@@ -1,4 +1,4 @@
-app_identifier "com.circleci.ios-game" # The bundle identifier of your app
+app_identifier "com.circleci.ios-games" # The bundle identifier of your app
 apple_id "zubairghori93@gmail.com" # Your Apple email address
 
 team_id "SUBZ24DP5B" # Developer Portal Team ID
