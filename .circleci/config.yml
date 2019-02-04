@@ -17,8 +17,8 @@ jobs:
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
-      - run: gym
-      - run: ipa distribute:itunesconnect -i 8675309 --upload --verbose
+      - run: fastlane gym
+      - run: fastlane ipa distribute:itunesconnect -i 8675309 --upload --verbose
 
       - store_artifacts:
           path: output
