@@ -21,7 +21,6 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-      - deployment:
           staging:
             branch: master
             commands:
