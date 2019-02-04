@@ -13,12 +13,14 @@ jobs:
     steps:
       - checkout
       - run: sudo gem install bundler
+      - run: gem install shenzhen
+      - run: ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install json
       - run: bundle install
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - run: fastlane gym
-      - run: fastlane ipa distribute:itunesconnect -i 8675309 --upload --verbose
+      - run: ipa distribute:itunesconnect -i 1451326857 --upload --verbose
 
       - store_artifacts:
           path: output
