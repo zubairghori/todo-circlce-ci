@@ -13,8 +13,8 @@ jobs:
     steps:
       - checkout
       - run: sudo gem install bundler
-      - run: gem install shenzhen
-      - run: ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install json
+      - run: sudo gem install shenzhen
+      - run: sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install json
       - run: bundle install
       - run:
           name: Fastlane
