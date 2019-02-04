@@ -19,6 +19,9 @@ jobs:
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
+      - run:  security unlock-keychain       -p circle circle.keychain
+      - run:  security set-keychain-settings -lut 7200 circle.keychain
+
       - run: security find-identity -v -p codesigning
       - run: fastlane gym
       - run: ipa distribute:itunesconnect -i 1451326857 --upload --verbose
