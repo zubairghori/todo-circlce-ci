@@ -65,6 +65,17 @@ workflows:
               only: development
           requires:
             - build-and-test
+
+machine:
+  environment:
+    GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: UnisonCare Corporation (SUBZ24DP5B)"
+
+deployment:
+  beta_distribution:
+    branch: master
+      commands:
+        - gym
+        - ipa distribute:itunesconnect -i 8675309 --upload --verbose
       #- beta:
           #filters:
             #branches:
