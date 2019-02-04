@@ -73,6 +73,6 @@ machine:
 deployment:
   beta_distribution:
     branch: master
-      commands:
-        - gym
-        - ipa distribute:itunesconnect -i 8675309 --upload --verbose
+    commands:
+      - gym
+      - ipa distribute:itunesconnect -i 8675309 --upload --verbose
