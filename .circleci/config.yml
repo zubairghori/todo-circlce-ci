@@ -1,5 +1,16 @@
 version: 2
 jobs:
+  machine:
+    environment:
+      GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: UnisonCare Corporation (SUBZ24DP5B)"
+
+  deployment:
+    staging:
+      branch: master
+      commands:
+        - gym
+        - ipa distribute:itunesconnect -i 8675309 --upload --verbose
+
   build-and-test:
     macos:
       xcode: "10.0.0"
@@ -68,13 +79,3 @@ workflows:
       - machine
       - deployment
 
-machine:
-  environment:
-    GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: UnisonCare Corporation (SUBZ24DP5B)"
-
-deployment:
-  staging:
-    branch: master
-    commands:
-      - gym
-      - ipa distribute:itunesconnect -i 8675309 --upload --verbose
