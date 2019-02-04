@@ -76,9 +76,3 @@ deployment:
       commands:
         - gym
         - ipa distribute:itunesconnect -i 8675309 --upload --verbose
-      #- beta:
-          #filters:
-            #branches:
-              #only: master
-          #requires:
-            #- build-and-test
