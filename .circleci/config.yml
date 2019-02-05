@@ -22,8 +22,8 @@ jobs:
 
 
       - run: security find-identity -v -p codesigning
-      - run: fastlane gym
-      - run: ipa distribute:itunesconnect -i 1451326857 --upload --verbose
+      # - run: fastlane gym
+      # - run: ipa distribute:itunesconnect -i 1451326857 --upload --verbose
 
       - store_artifacts:
           path: output
