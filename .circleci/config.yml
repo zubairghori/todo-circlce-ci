@@ -61,6 +61,7 @@ jobs:
       - run: sudo fastlane update_fastlane
       - run: sudo gem install bundler
       - run: bundle install
+      - run: fastlane match appstore
       - run: security find-identity -v -p codesigning
       - run:
           name: Fastlane
