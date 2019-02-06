@@ -8,6 +8,6 @@
 
 scheme "Game"
 
-sdk "iphoneos12.1"
+sdk "iphoneos12.0"
 
 output_directory "./"
