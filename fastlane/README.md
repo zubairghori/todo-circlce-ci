@@ -26,6 +26,11 @@ Runs all the tests
 fastlane ios adhoc
 ```
 Ad-hoc build
+### ios beta
+```
+fastlane ios beta
+```
+
 
 ----
 

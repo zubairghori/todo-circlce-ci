@@ -16,4 +16,10 @@ platform :ios do
     match(type: "adhoc",readonly: false)
     gym(export_method: "ad-hoc")
   end
+
+  lane :beta do
+    build_app
+    upload_to_testflight
+  end
+
 end
