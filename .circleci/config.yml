@@ -60,7 +60,6 @@ jobs:
       - checkout
       - run: sudo fastlane update_fastlane
       - run: sudo gem install bundler
-      - run: bundle install
       - run:
           name: decode Certificates
           context: zubair
@@ -73,6 +72,8 @@ jobs:
           context: zubair
           command: base64 -D -o ~/Library/MobileDevice/Provisioning\ Profiles/gamer.mobileprovision <<< $gamer
       - run: security find-identity -v -p codesigning
+      - run: bundle install
+
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
