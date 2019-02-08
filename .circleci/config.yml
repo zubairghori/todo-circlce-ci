@@ -71,6 +71,7 @@ jobs:
           name: decode Provisioning Profiles
           # context: zubair
           command: base64 -D -o ~/Library/MobileDevice/Provisioning\ Profiles/gamer.mobileprovision <<< $gamer
+      - run: ls ~/Library/MobileDevice/Provisioning\ Profiles/
       - run: security find-identity -v -p codesigning
       - run: bundle install
 
