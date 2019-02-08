@@ -71,7 +71,7 @@ jobs:
       - run:
           name: decode Provisioning Profiles
           context: org-global
-          command: base64 -D -o ~/Library/MobileDevice/Provisioning\ Profiles/gamer.mobileprovision 
+          command: base64 -D -o ~/Library/MobileDevice/Provisioning\ Profiles/gamer.mobileprovision <<< $gamer
       - run: security find-identity -v -p codesigning
       - run:
           name: Fastlane
