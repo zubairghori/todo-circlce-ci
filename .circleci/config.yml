@@ -55,6 +55,8 @@ jobs:
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: beta
+      GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: UnisonCare Corporation (SUBZ24DP5B)"
+
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
