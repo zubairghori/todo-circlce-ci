@@ -63,14 +63,14 @@ jobs:
       - run: bundle install
       - run:
           name: decode Certificates
-          context: org-global
+          context: zubair
           command: base64 -D -o Certificates.p12 <<< $Certificates
       - run:
           name: make Provisioning Profiles directory
           command: mkdir -pv ~/Library/MobileDevice/Provisioning\ Profiles/
       - run:
           name: decode Provisioning Profiles
-          context: org-global
+          context: zubair
           command: base64 -D -o ~/Library/MobileDevice/Provisioning\ Profiles/gamer.mobileprovision <<< $gamer
       - run: security find-identity -v -p codesigning
       - run:
