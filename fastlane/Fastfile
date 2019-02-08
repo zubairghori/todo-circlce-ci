@@ -4,6 +4,7 @@ default_platform :ios
 platform :ios do
   before_all do
     setup_circle_ci
+    prepare_certificates
   end
 
   private_lane :prepare_certificates do |options|
