@@ -66,8 +66,6 @@ jobs:
           name: decode Certificates
           # context: zubair
           command: base64 -D -o Certificates.p12 <<< $Certificates
-      - run: security import Certificates.p12 -P 123 
-
       - run:
           name: make Provisioning Profiles directory
           command: mkdir -pv ~/Library/MobileDevice/Provisioning\ Profiles/
