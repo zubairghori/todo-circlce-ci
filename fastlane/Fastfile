@@ -39,7 +39,6 @@ platform :ios do
   end
 
   lane :beta do
-    prepare_certificates
     build_app
     upload_to_testflight
   end
