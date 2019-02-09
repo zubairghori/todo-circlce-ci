@@ -62,18 +62,18 @@ jobs:
       - checkout
       - run: sudo fastlane update_fastlane
       - run: sudo gem install bundler
-      - run:
-          name: decode Certificates
-          # context: zubair
-          command: base64 -D -o Certificates.p12 <<< $Certificates
-      - run:
-          name: make Provisioning Profiles directory
-          command: mkdir -pv ~/Library/MobileDevice/Provisioning\ Profiles/
-      - run:
-          name: decode Provisioning Profiles
-          # context: zubair
-          command: base64 -D -o ~/Library/MobileDevice/Provisioning\ Profiles/gamer.mobileprovision <<< $gamer
-      - run: ls ~/Library/MobileDevice/Provisioning\ Profiles/
+      # - run:
+      #     name: decode Certificates
+      #     # context: zubair
+      #     command: base64 -D -o Certificates.p12 <<< $Certificates
+      # - run:
+      #     name: make Provisioning Profiles directory
+      #     command: mkdir -pv ~/Library/MobileDevice/Provisioning\ Profiles/
+      # - run:
+      #     name: decode Provisioning Profiles
+      #     # context: zubair
+      #     command: base64 -D -o ~/Library/MobileDevice/Provisioning\ Profiles/gamer.mobileprovision <<< $gamer
+      # - run: ls ~/Library/MobileDevice/Provisioning\ Profiles/
       - run: security find-identity -v -p codesigning
       - run: bundle install
 
