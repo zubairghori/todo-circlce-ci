@@ -39,7 +39,7 @@ platform :ios do
   end
 
   lane :beta do
-    build_app
+    build_app(scheme: "Game")
     upload_to_testflight
   end
 
