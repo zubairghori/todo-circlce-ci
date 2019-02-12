@@ -18,6 +18,7 @@ platform :ios do
     gym(export_method: "ad-hoc")
   end
 
+
   lane :beta do
     match(type: "appstore", readonly: is_ci)
     gym(scheme: "Release")   
