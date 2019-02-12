@@ -19,7 +19,8 @@ platform :ios do
   end
 
   lane :beta do
-    build_app(scheme: "Game")
+    match(type: "appstore", readonly: is_ci)
+    gym(scheme: "Release")   
     upload_to_testflight
   end
 
