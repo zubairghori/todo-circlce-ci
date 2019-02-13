@@ -5,7 +5,7 @@ platform :ios do
   before_all do
     setup_circle_ci
     puts "Its working here"
-  end
+    end
 
   desc "Runs all the tests"
   lane :test do
@@ -23,7 +23,6 @@ platform :ios do
     match(type: "appstore", readonly: is_ci)
     gym(scheme: "Game")
     increment_build_number
-   `upload_to_testflight(skip_waiting_for_build_processing:true)
+    upload_to_testflight(skip_waiting_for_build_processing:true)
   end
-
 end
