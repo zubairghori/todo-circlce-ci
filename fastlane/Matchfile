@@ -1,4 +1,4 @@
-git_url("git@github.com:zubairghori/certificates.git")
+git_url("git@github.com:zubairghori/new.git")
 
 storage_mode("git")
 
