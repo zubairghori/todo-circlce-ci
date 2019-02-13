@@ -1,35 +1,28 @@
+# fastlane/Fastfile
 default_platform :ios
 
 platform :ios do
   before_all do
     setup_circle_ci
-  end
+    puts "Its working here"
+    end
 
   desc "Runs all the tests"
   lane :test do
     scan
-    snapshot
   end
 
   desc "Ad-hoc build"
   lane :adhoc do
-    match(type: "adhoc")
+    match(type: "adhoc",readonly: false)
     gym(export_method: "ad-hoc")
   end
 
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
-  lane :beta do
-    match(type: "appstore")
-    gym(export_method: "app-store")
-  end
 
-  desc "Deploy a new version to the App Store"
-  lane :release do
-      match(type: "appstore",include_bitcode: true)
-      snapshot
-    gym # Build your app - more options available
-    deliver(force: true)
-    # frameit
+  lane :beta do
+    match(type: "appstore", readonly: is_ci)
+    gym(scheme: "Game")
+    increment_build_number
+    upload_to_testflight(skip_waiting_for_build_processing:true)
   end
 end
